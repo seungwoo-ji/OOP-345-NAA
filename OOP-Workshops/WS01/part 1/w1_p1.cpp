@@ -1,3 +1,20 @@
+/* ------------------------------------------------------
+Workshop 1: Across Translation Units
+Module: w1
+Filename: w1_p1.cpp
+Version: 1.0
+Author: Seung Woo Ji
+Student Number: 116376195
+Email: swji1@myseneca.ca
+Revision History
+-----------------------------------------------------------
+Date		Reason
+2020/9/19	Completed workshop 1 part 1
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code 
+that my professor provided to complete my workshops and assignments.
+-----------------------------------------------------------*/
+
 // Workshop 1 - Linkage, Storage Duration, Namespaces, and OS Interface
 // Cornel - 2020/01/08
 
@@ -19,13 +36,15 @@ codes
 
 // TODO: write the prototype for the main function
 //         to accept command line arguments
-int main (int argc, char* argv[]) // argc = "argument count" && argv = "argument vector" (A vector is a one-dimensional array, and argv is a one-dimensional array of strings.)
+
+int main(int argc, char** argv)
 {
 	std::cout << "Command Line:\n";
 	// TODO: print the command line here, in the format
 	// 1: first argument
 	// 2: second argument
 	// 3: third argument
+
 	for (int i = 0; i < argc; ++i)
 	{
 		std::cout << i + 1 << ": " << argv[i] << std::endl;
@@ -35,12 +54,12 @@ int main (int argc, char* argv[]) // argc = "argument count" && argv = "argument
 
 	// the archive can store maximum 10 events
 	sdds::Event archive[10];
-	// the index of the next available position in the archive // what is size_t? https://stackoverflow.com/questions/131803/unsigned-int-vs-size-t
+	// the index of the next available position in the archive
 	size_t idxArchive = 0;
 
 	sdds::Event currentEvent;
 
-	const size_t secInDay = 60u * 60u * 24u;// day has 86400 seconds 
+	const size_t secInDay = 60u * 60u * 24u;// day has 86400 seconds
 
 	for (auto day = 1; day < argc; ++day)
 	{
@@ -51,11 +70,11 @@ int main (int argc, char* argv[]) // argc = "argument count" && argv = "argument
 		std::cout << "--------------------\n";
 		std::ifstream in(argv[day]);
 		char opcode = '\0';
-		size_t time = secInDay + 1; // ***Q) why we set time to secInDay + 1 and then assign it by user input?***
+		size_t time = secInDay + 1;
 		in >> opcode >> time;
 
 		// starting at midnight, until the end of the day
-		for (::g_sysClock = 0u; ::g_sysClock < secInDay; ::g_sysClock++) 
+		for (::g_sysClock = 0u; ::g_sysClock < secInDay; ::g_sysClock++)
 		{
 			// what should happen this second
 			while (time == ::g_sysClock)
@@ -83,7 +102,7 @@ int main (int argc, char* argv[]) // argc = "argument count" && argv = "argument
 				case 'E': // end the current event
 					currentEvent.setDescription(nullptr);
 					break;
-				case 'P': // print to scren the information about the current event
+				case 'P': // print to screen the information about the current event
 					currentEvent.display();
 					break;
 				case 'A': // add a copy of the current event to the archive
