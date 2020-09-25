@@ -1,0 +1,16 @@
+//==============================================
+// Name:		Seung Woo Ji
+// Student Number: 	116376195
+// Email:          	swji1@myseneca.ca
+// Course:         	OOP345 NAA
+// Date:           	September 24, 2020
+//==============================================
+// 		Workshop 1_Reflect
+//==============================================
+
+	In this workshop, I learned how to make the main function to receive multiple arguments from the command line. By doing so, my program became capable of receiving the two arguments, Monday.txt and Tuesday.txt such that it could read the events of a day. 
+
+	Moreover, I learned to utilize extern keyword to make g_sysClock. In this way, I was able to declare the variable in the module, Event, whereas its actual definition was defined in the other translation unit, w1_p2. 
+In contrast to the extern keyword, I used static keyword on the local count variable within display function of the event module. This allowed the program to keep track of the number of the function calls while the application was running because it remained in the memory for the lifetime of the program.
+
+	For the part 2 of the workshop, I changed the e_desc variable to character pointer type. By doing so, it was able to point to the dynamic memory where it stored the character string of any length. However, I also needed to make sure there was no memory leak by implementing deep copy assignment operator, destructor, and deep copy constructor. This part also caused me great headache as I needed to ensure all pointers were assigned to nullptr whenever they went out of usage. To make matters worse, when I finally finished the program without memory leaks, the matrix threw an error of unconditional jump due to uninitialized variable. This took me several hours to figure out but eventually I found that I did not assign nullptr before I called the deep copy assignment operator in the deep copy constructor.
