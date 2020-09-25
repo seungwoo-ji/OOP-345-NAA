@@ -1,3 +1,20 @@
+/* ------------------------------------------------------
+Workshop 1: Across Translation Units
+Module: w1
+Filename: w1_p1.cpp
+Version: 1.0
+Author: Seung Woo Ji
+Student Number: 116376195
+Email: swji1@myseneca.ca
+Revision History
+-----------------------------------------------------------
+Date		Reason
+2020/9/22	Completed workshop 1 part 2
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my workshops and assignments.
+-----------------------------------------------------------*/
+
 // Workshop 1 - Linkage, Storage Duration, Namespaces, and OS Interface
 // Cornel - 2020/01/08
 
@@ -19,7 +36,8 @@ codes
 
 // TODO: write the prototype for the main function
 //         to accept command line arguments
-int main(int argc, char* argv[])
+
+int main (int argc, char** argv)
 {
 	std::cout << "Command Line:\n";
 	// TODO: print the command line here, in the format
@@ -33,6 +51,7 @@ int main(int argc, char* argv[])
 	}
 
 	std::cout << std::endl;
+
 
 	// the archive can store maximum 10 events
 	sdds::Event archive[10];
