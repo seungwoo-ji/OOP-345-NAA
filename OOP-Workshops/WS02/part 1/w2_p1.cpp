@@ -1,3 +1,20 @@
+/* ------------------------------------------------------
+Workshop 2: Move and Copy Semantics
+Module: w2
+Filename: w2_p1.cpp
+Version: 1.0
+Author: Seung Woo Ji
+Student Number: 116376195
+Email: swji1@myseneca.ca
+Revision History
+-----------------------------------------------------------
+Date		Reason
+2020/10/03	Completed workshop 2 part 1
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my workshops and assignments.
+-----------------------------------------------------------*/
+
 // Workshop 2 - Copy and Move Semantics
 // w2.cpp
 
@@ -33,7 +50,7 @@ int main(int argc, char** argv)
     }
 
 	sdds::TimedEvents t;
-	{								// https://stackoverflow.com/questions/9704083/unnecessary-curly-braces-in-c
+	{
 		t.startClock();
 		sdds::RecordSet a;
 		t.stopClock();
