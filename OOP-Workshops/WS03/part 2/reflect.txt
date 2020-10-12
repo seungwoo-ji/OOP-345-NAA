@@ -1,0 +1,30 @@
+//==============================================
+// Name:		Seung Woo Ji
+// Student Number: 	116376195
+// Email:          	swji1@myseneca.ca
+// Course:         	OOP345 NAA
+// Date:           	October 11, 2020
+//==============================================
+// 		Workshop 3_Reflect
+//==============================================
+
+	In this workshop, I learned how to utilize template syntax to make class templates for Set and Pair classes. Using these as the base classes, I derived templated classes of SetSummable and PairSummable. By doing so, the compiler was able to use the templates as blueprints to generate a class type that matched  the arguments specified in the instantiation of objects.
+
+	It was crucial not to separate a module with the template syntax into header and implementation file because the compiler needed to access the implementations of the methods for the templated class with the given template arguments. If the module were separated into .h and .cpp files, it would be created as an independent translation unit and its implementation would be inaccessible to other translation unit during the compilation.
+	
+	For PairSummable module, I made use of class variables, ps_init and ps_width, in order to store initial summation value and minimum field width of keys.  I also set the ps_init to be default value for 2-arguments constructor. In this way, the constructor automatically assigned the const V& value argument to be ps_init whenever there was no argument provided during the instantiation.
+	
+	Since the data members of PairSummable were set to be class members, I initiated them outside of the template class definition. I also made specialization of those initializations so that different initial value was set for different types of arguments. For example, if type K and V were of type String, the ps_init would be an empty string. In contrast, if type K were of type String and V were of type int, the ps_init would be 0. 
+	
+	By default, the operator would add the value of the parameter to the value of the object if both objects had matching key with different address. So, I made another specialization of the operator+=() for PairSummable. When PairSummable object that was instantiated with arguments of type String were added to another object of the same type, their values were concatenated using “,” as a separator.
+	
+	Throughout the workshop,  I had a difficult time to fully understand how the template was working. Also, I found it unusual to see a really long name for the template syntax. For example, when I first saw the code as follows;
+
+	template<>
+	PairSummable<std::string, std::string>& PairSummable<std::string, std::string>::operator+=(const 	PairSummable<std::string, std::string>& item)
+
+I thought I was making a mistake because I had never seen something like this before.
+
+
+
+
