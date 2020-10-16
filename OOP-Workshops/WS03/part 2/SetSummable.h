@@ -33,10 +33,7 @@ namespace sdds
 
 			for (size_t i = 0u; i < this->size(); ++i)
 			{
-				if ((*this)[i].key() == filter)
-				{
-					filteredElements += (*this)[i];
-				}
+				filteredElements += (*this)[i];
 			}
 
 			return filteredElements;
