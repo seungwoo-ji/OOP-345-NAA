@@ -1,0 +1,17 @@
+//==============================================
+// Name:		Seung Woo Ji
+// Student Number: 	116376195
+// Email:          	swji1@myseneca.ca
+// Course:         	OOP345 NAA
+// Date:           	October 18, 2020
+//==============================================
+// 		Workshop 4_Reflect
+//==============================================
+
+	In this workshop, I learned how to implement the composition and aggregation relationships. Restaurant class has “has-a” or composition relationship with Reservation class and it is responsible for destroying Reservation class at or before its own destruction. Its copy constructor and copy assignment operator, for example, manage destroying the Reservation classes by deallocating the memory of its dynamically created array when they are out of use. In case of the move constructors and the move assignment operators, they simply move the Reservation object itself to new location by using its object address. 
+	
+	In contrast, ConfirmationSender class has aggreagation relationship with Reservation class – that is, ConfirmationSender class has a composition relationship with the Reservation class but is not responsible for creating and destroying it. This is possible because ConfirmationSender class contains the array of Reservation object pointers. By doing so, the copy constructor and copy assignment operator of ComfirmationSender control the management for the resources of dynamically allocated array and do not involved in the destruction of the Reservation objects within the array. Similarly, the move constructor and the move assignment operator simply reassign the pointer that refers to the address of the array of Reservation pointers. Either way, Reservation objects can survive even after the destruction of ConfirmationSender object.
+	
+	Throughout the workshop, I learned to make my own decision to choose which type I need to assign for the member variables within the class. For example, for Reservation class, I chose String type to store reservation ID, name, email. This is because, according to the given data set, those variables include the array of character of varying size. By utilizing String type, I did not have to worry about the dynamic size of the character array and deallocating the memory manually. For number, day, and hour variables, I chose the unsigned integer type because these numbers cannot be negative numbers. 
+	
+	Furthermore, I enjoyed utilizing a number of String member functions to trim the leading and trailing whitespaces. For this, I managed to use find member function to find to look for the position of a specific delimiter character or whitespace and then use combination of substr and erase functions to extract the correct data from the string without any whitespaces. Converting string to integer type was easy as it automatically excludes the whitespaces within the string.
