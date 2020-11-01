@@ -1,0 +1,18 @@
+//==============================================
+// Name:		Seung Woo Ji
+// Student Number: 	116376195
+// Email:          	swji1@myseneca.ca
+// Course:         	OOP345 NAA
+// Date:           	October 28, 2020
+//==============================================
+// 		Workshop 5_Reflect
+//==============================================
+	In this workshop, I learned how to implement a templated class named “Collection” to dynamically allocate and deallocate the objects of Book and Movie classes. I also learned to design SpellChecker class to be a function object or a functor in order to check the misspelled words from a file and correct them. As a functor, SpellChecker object can also store its own state. For example, the SpellChecker object can be built by its own constructor and store two parallel arrays of words by reading the file. When the functor is called as a function, it compares the given string with its own data member and corrects the misspelled words. 	
+	
+	In addition, I learned how to make use of lambda expressions throughout the program. In contrast to functors and normal functions, the lambda expression allows us to easily implement a small and disposable one-time-use code. For example, I used the lambda function called “fixPrice” to adjust the price of the book. Since this function is used only for updating the price of the book and not used elsewhere, the lambda expression is well suited for its purpose. Similarly, I implemented the lambda expressions for the function called “removeWhiteSpaces” to delete the leading and trailing whitespaces of the given string.
+
+	I also learned how to implement a code to generate an exception in certain conditions. For example, I designed the SpellChecker class to throw the error when the index is out of the range. This method is relatively handy than using the conditional logic with if statement because I was able to achieve the same goal but the code with try and error statements became more readable and shorter.
+	
+	In the program, the classes Movie and Book have almost identical logic in reading the file. To avoid the repetition of the codes, I could make a template function named “readFile” that reads the content of the given file and load its data to the given object. For instance, I could put the file name as the first parameter and the object type as the second parameter. Depending on the object type, the template function will return the matching type accordingly after reading the file.
+	
+	The classes Movie and Book also contain their own default constructor, but they are not used in the main function because they are only instantiated by their custom constructor. However, their default constructors are needed when the template generates its matching type during the dynamic allocation. For example, in the += overloading operator for Collection, type T can be either Book or Movie class and its object is dynamically allocated by utilizing the default constructor. Thus, the default constructor cannot be removed for both Book and Movie classes.
