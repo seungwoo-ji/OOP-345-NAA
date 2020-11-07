@@ -1,0 +1,15 @@
+//==============================================
+// Name:		Seung Woo Ji
+// Student Number: 	116376195
+// Email:          	swji1@myseneca.ca
+// Course:         	OOP345 NAA
+// Date:           	November 3, 2020
+//==============================================
+// 		Workshop 6_Reflect
+//==============================================
+	In this workshop, I learned how to utilize the vector container to store dynamically created polymorphic objects. For example, in the “Autoshop” class, the vector named “m_vehicles” managed the pointers that point to the polymorphic objects of the “Vehicle” class. Since, this class contained the dynamically allocated resource, I needed to follow the rule of the fives by adding the copy constructor, move constructor, move assignment operator, copy assignment operator, and destructor. For the first four operators, I simply prohibited the uses of them but, for the destructor, I implemented codes in such a way that the dynamic memories of the polymorphic objects were deallocated when they were no longer used. This was important because, even though the vector container could manage its elements on its own, it only contained the pointers to the actual objects and thus I needed to manually manage the deallocation of the dynamic memory through the destructors.
+	
+	In addition, I learned how to report and handle the exceptions. For example, The Car class threw errors when the record contained invalid data and conditions of a vehicle. Similarly, the “createInstance” function threw an exception when the record represented invalid types of a vehicle. By reporting these exceptions, the “loadData” function was able to catch and handle them accordingly using try and catch blocks. The same result could be achieved by utilizing the if statements. For instance, I could throw cerr message that an exception happened at the specific stage of the program by checking the the car type did not contain c, C, r, or R.
+	
+	In this program, I used the Vector and List containers to store pointers that referred to the addresses of the polymorphic objects. It was mandatory to store the elements of pointers because the program needed to read the file at the run-time and set the attributes of the objects accordingly. If the “Vehicle” objects were not polymorphic objects and already contained their own attributes at the compile time, then I would be able to use std::list<sdds::Vehicle> and std::vector<sdds::Vehicle> to store such objects.
+
