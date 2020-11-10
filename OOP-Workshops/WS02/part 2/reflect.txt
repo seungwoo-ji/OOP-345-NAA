@@ -1,0 +1,14 @@
+//==============================================
+// Name:		Seung Woo Ji
+// Student Number: 	116376195
+// Email:          		swji1@myseneca.ca
+// Course:         		OOP345 NAA
+// Date:           		October 3, 2020
+//==============================================
+// 		Workshop 2_Reflect
+//==============================================
+
+	In this workshop, I utilized the fstream library to retrieve records with the delimiter of the empty space from the gutenberg_shakespeare text file. For this, I used getline function to set the custom delimiter.  
+I also learned to implement chrono library to measure the time duration between two different points of the time. In order to make sure to set the instances variables of  time_point and duration to empty states, I employed default member initializers with empty curly braces in the TimedEvent header file as indicated by the author of the chrono library. 
+	Moreover, I learned how to implement move constructor and move assignment operator for RecordSet class. By doing so, I was able to save the time to copy the whole class instance when the instance is only used temporarily because the move operators simply moved the address of the resource variable to the resource variable of a new object instead of copying it. I could see the noticeable time difference immediately when I was running the program. For example, the copy constructor took about 1992221400 nanoseconds whereas the move constructor took around 3300 nanoseconds.
+	Throughout the workshop, I found it difficult to implement and use the unfamiliar libraries that were new to me. For instance, I have used the character array to store the string so far. When I first used the string, I needed some time to familiar with it. But now, I found the string library was much easier to be used because I did not have to worry about the string length. 
