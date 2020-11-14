@@ -1,0 +1,28 @@
+//==============================================
+// Name:		Seung Woo Ji
+// Student Number: 	116376195
+// Email:          	swji1@myseneca.ca
+// Course:         	OOP345 NAA
+// Date:           	November 10, 2020
+//==============================================
+// 		Workshop 7 Reflect
+//==============================================
+	
+	In this workshop, I learn how to implement STL algorithm functions to do useful tasks such as copying, accumulating, sorting, and finding that operate on ranges of elements within STL containers. 
+For example, for SongCollection::display function, I utilize std::for_each query algorithm to display the contents of the elements. I also use the numeric library’s std::accumulate algorithm function to find the sum of the total play time of the songs. 
+
+	Secondly, I use the std::sort manipulator function to sort the songs according to the given parameter of SongCollection::sort function. By providing the lambda expression as a comparator, this function manages to provide results in ascending order. 
+
+	Thirdly, I utilize std::transform within SongCollection::cleanAlbum function. Initially, I tried to use the std::replace_if function to replace the element with the empty string. However, I realize that it is not possible to do so because the std::replace_if function operates on the elements in the range not the fields of the range. Thus, I have no choice but to use std::transform to remove the token [None] from the album field of the songs and replace it with the empty string. 
+
+	Fourthly, I use the any_of query function to check if the vector contains songs of the artist whose name is given as an argument within SongCollection::inCollection function. In this way, the function returns true if the collection has at least one song of the artist.
+
+	Lastly, I utilize the std::copy_if modifier function in order to copy the songs of the artist whose name is given as parameter in the function called SongCollection::getSongForArtist. Subsequently, these copies are pushed to the list container. Initially, I used the artistSongs.begin() as an output iterator but soon realize that the copy_if function does not push_back the copied element to the new element. To solve this problem, I use std::back_inserter as an iterator to push the copied element to the list container.
+
+	As a whole, the usage of various algorithm functions allows me to significantly reduce the amount of manual coding to provide the same results. For example, for the sorting function, I may use the double for loop to sort the elements one by one. Instead of doing that, I can achieve the same result with one line of the sort function from the algorithm library.
+
+	In the program, I notice that invalid parameter for the sorting function can create errors if the client provided invalid parameter. To report an error during run-time, I implement else condition within the function to catch such invalid inputs from the client and throw an error indicating that the user provides an invalid field. By doing this, the program will be terminated by the operating system because of unhandled error. Alternatively, I could implement try-catch statements in the main cpp file to capture such error so that the program prints out the error message. 
+	
+	However, in order to catch an error during the compile-time, I need to use the static assertions. For example, I need to implement a condition of the invalid field name as an argument for the static_assert(). By doing this, I can create a custom compilation error message saying that the user field name input is invalid and result in the compilation error.
+
+
