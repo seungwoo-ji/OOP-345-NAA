@@ -1,0 +1,17 @@
+//==============================================
+// Name:		Seung Woo Ji
+// Student Number: 	116376195
+// Email:          	swji1@myseneca.ca
+// Course:         	OOP345 NAA
+// Date:           	November 19, 2020
+//==============================================
+// 		Milestone Reflect
+//==============================================
+	By completing the series of milestones, I learn how to utilize and apply the knowledge what I learn from the course. 
+	
+	In milestone 1, I make a class called “Utilities” which has a function member of “extractToken”. This member function extracts the token from the given string and returns it. Using static class member variable called “m_delimiter”, the user can freely change the delimiter of the class and is able to extract useful information from the string with different delimiters (e.g. ‘ | ’ or ‘ , ’). I also make a class named “Station” that manages a single category of items on the assembly line. This station holds a certain quantity of an item and subtracts it by one whenever it fills the customer order. 
+	
+	In milestone 2, I make a class called “CustomerOrder” that manages a single order on the assembly line. Since this class holds the array of “Item” pointers, I have to be careful as to how allocate and deallocate the memories.  For example, whenever the class no longer uses its dynamically allocated resource, the function called “emptyLst” deallocates the dynamic memory of each “Item” object and, in turn, deallocates the dynamically allocated array of “m_lstItem” itself at the end. During this milestone, I have a difficulty to understand the difference between “isOrderFilled”  and “isItemFilled” functions as they somewhat perform the similar job. In the end, I manage to understand their roles as  the “isOrderFilled” function indicates a status of whether the “CustomerOrder” is fulfilled whereas “isItemFilled” function indicates a status of whether the single item is filled.
+	
+	In milestone 3, I develop two classes each named “Workstation” and “LineManager”. Throughout all milestones, I find this one is the hardest. The “Workstation” class inherits from class “Station” and manages a single “Item” on the assembly line. This class is one of the most important and challenging part during the project as it stores a pointer that points to the next station as well as processes a single cycle of the assembly. The “LineManager” class is another essential part of this program because it manages the entire assembly line. Firstly, this class links a pair of workstations to form a complete assembly line. I make a function called “findFIrstStation” to effectively search for the station at the beginning of the assembly line. By doing so, each customer order is processed and filled in order. This function is also useful when displaying the information in the order they are linked by providing the information about the starting station 
+	
