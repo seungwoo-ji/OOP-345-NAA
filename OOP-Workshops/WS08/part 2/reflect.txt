@@ -1,0 +1,14 @@
+//==============================================
+// Name:		Seung Woo Ji
+// Student Number: 	116376195
+// Email:          	swji1@myseneca.ca
+// Course:         	OOP345 NAA
+// Date:           	November 20, 2020
+//==============================================
+// 		Workshop 8 Reflect
+//==============================================
+	In this workshop, I learn how to utilize both raw pointers and smart pointers in order to create a list of dynamic “Product” objects by finding matching pairs of “Description” and “Price” objects that possess the same product code. Since the function named “validate” generates an exception when it detects negative price for a product like a broccoli (i.e. $-2.49), the program ultimately ends up with a single block of memory leak as the error breaks the loop before the dynamic object can be deallocated from the memory (i.e. delete Product).
+	
+	Smart pointers can be a perfect choice to solve this kind of problem because it explicitly manages the resource automatically. Using “memory” library, I create a unique smart pointer that has exclusive ownership of dynamically created “Product” object. By doing so, when broccoli product throws an error, the unique pointer deallocates its memory when its resource is no longer needed. 
+	
+	In summary, a smart pointer is useful method in this regard as it offers a mechanism of managing the resource. A raw pointer, for example, requires explicit management of the resource and its eventual release cannot be guaranteed when the program faces exceptional situation (e.g. throwing error before the dynamic memory is deallocated). In contrast, when a smart pointer goes out of the scope, it makes sure to call its destructor to deallocate the dynamic memory to which it points.
