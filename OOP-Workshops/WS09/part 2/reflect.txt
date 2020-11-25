@@ -1,0 +1,18 @@
+//==============================================
+// Name:		Seung Woo Ji
+// Student Number: 	116376195
+// Email:          	swji1@myseneca.ca
+// Course:         	OOP345 NAA
+// Date:           	November 20, 2020
+//==============================================
+// 		Workshop 9 Reflect
+//==============================================
+	In this workshop, I learn how to make a class called “SecureData” that encrypts a text file of characters using “coverter()” function. Its “backup()” member function writes its content to a binary file as a backup. Subsequently, the program can read its backup with the help of another member function, “restore()”, that newly allocates the memory for it and read the data. 
+	
+	It is necessary to use a binary format for efficiently reading and writing a file. For example, the binary access can transfer data to and from the memory without any formatting. That is, I do not have to worry about conversion, insertion, and extraction of records. Instead, I just have to ensure the program knows the structure of the data so that it can correctly interpret and understand how to handle the data.
+	
+	It is also important to bind “converter” function to its arguments because it allows better readability to the users and reduces the amount of repeated coding. For example, I make two threads that each handles the half of the text content in this application. To do this, I defined a binding for each operation that will be executed by the threads. Putting all these arguments within a single thread object would make the code hard to be understood by other programmers. 
+	
+	By utilizing thread class, I make the “code” function to use two threads to encrypt and decrypt the text. In this way, each thread execute its own version of “converter” function concurrently and thereby reduces the elapsed time to complete execution of the “code” function. 
+	
+
